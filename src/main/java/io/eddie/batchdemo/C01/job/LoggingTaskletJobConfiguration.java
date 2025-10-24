@@ -22,14 +22,14 @@ public class LoggingTaskletJobConfiguration
         extends DefaultBatchConfiguration {
 
     @Bean
-    public Job logginJob(
+    public Job loggingJob(
             JobRepository jobRepository,
             @Qualifier("printHelloStep") Step printHelloStep,
             @Qualifier("printWorldStep") Step printWorldStep
     ) {
         return new JobBuilder("loggingJob", jobRepository)
                 .start(printHelloStep)
-                .start(printWorldStep)
+                .next(printWorldStep)
                 .build();
     }
 
