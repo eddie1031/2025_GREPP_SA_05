@@ -12,6 +12,11 @@ import org.springframework.context.annotation.FilterType;
                         type = FilterType.REGEX,
                         pattern = "io\\.eddie\\.batchdemo\\.C01\\..*"
                 )
+                ,
+                @ComponentScan.Filter(
+                        type = FilterType.REGEX,
+                        pattern = "io\\.eddie\\.batchdemo\\.C02\\..*"
+                )
         }
 )
 public class BatchDemoApplication {
